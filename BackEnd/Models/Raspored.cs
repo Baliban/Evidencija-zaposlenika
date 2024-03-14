@@ -2,7 +2,7 @@
 {
     public class Raspored : Entitet
     {
-        public string? Djelatnik { get; set; }
+        public int? Djelatnik { get; set; }
 
         public string? Odjel { get; set; }
         public string? Ponedjeljak { get; set; }

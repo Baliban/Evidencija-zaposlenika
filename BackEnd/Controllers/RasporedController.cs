@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
     
         [ApiController]
         [Route("api/v1/[controller]")]
-        public class RasporedController
+        public class RasporedController:ControllerBase
         {
             // Dependency injection
             // Definiraš privatno svojstvo

@@ -13,6 +13,6 @@ namespace BackEnd.Data
         }
 
         public DbSet<Djelatnici> Djelatnici { get; set; }
-
+        public DbSet<osoba> osoba { get; set; }
     }
 }

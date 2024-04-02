@@ -17,6 +17,15 @@ namespace BackEnd
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddCors(opcije =>
+            {
+                opcije.AddPolicy("CorsPolicy",
+                    builder =>
+                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+                );
+
+            });
+
             // Dodavanje baze podataka
             builder.Services.AddDbContext<EdunovaContext>(o => {
                 o.UseSqlServer(builder.Configuration.GetConnectionString("EdunovaContext"));
@@ -25,16 +34,16 @@ namespace BackEnd
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            //if (app.Environment.IsDevelopment())
-            //{
+           // if (app.Environment.IsDevelopment())
+           // {
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            //}
+           // }
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
+            app.UseCors("CorsPolicy");
 
             app.MapControllers();
 

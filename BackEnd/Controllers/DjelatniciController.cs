@@ -32,28 +32,28 @@
         }
 
         [HttpPost]
-        public IActionResult Post(Djelatnici smjer)
+        public IActionResult Post(Djelatnici djelatnici)
         {
-            _context.Djelatnici.Add(smjer);
+            _context.Djelatnici.Add(djelatnici);
             _context.SaveChanges();
-            return new JsonResult(smjer);
+            return new JsonResult(djelatnici);
         }
 
         [HttpPut]
         [Route("{ID:int}")]
         public IActionResult Put(int ID, Djelatnici Djelatnici)
         {
-            var smjerIzBaze = _context.Djelatnici.Find(ID);
+            var djelatnikIzBaze = _context.Djelatnici.Find(ID);
             // za sada ručno, kasnije će doći Mapper
-            smjerIzBaze.Ime = Djelatnici.Ime;
-            smjerIzBaze.Prezime = Djelatnici.Prezime;
-            smjerIzBaze.Odjel = Djelatnici.Odjel;
+            djelatnikIzBaze.Ime = Djelatnici.Ime;
+            djelatnikIzBaze.Prezime = Djelatnici.Prezime;
+            djelatnikIzBaze.Odjel = Djelatnici.Odjel;
 
 
-            _context.Djelatnici.Update(smjerIzBaze);
+            _context.Djelatnici.Update(djelatnikIzBaze);
             _context.SaveChanges();
 
-            return new JsonResult(smjerIzBaze);
+            return new JsonResult(djelatnikIzBaze);
         }
 
         [HttpDelete]
@@ -61,8 +61,8 @@
         [Produces("application/json")]
         public IActionResult Delete(int ID)
         {
-            var smjerIzBaze = _context.Djelatnici.Find(ID);
-            _context.Djelatnici.Remove(smjerIzBaze);
+            var djelatnikIzBaze = _context.Djelatnici.Find(ID);
+            _context.Djelatnici.Remove(djelatnikIzBaze);
             _context.SaveChanges();
             return new JsonResult(new { poruka = "Obrisano" });
         }

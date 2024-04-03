@@ -4,18 +4,25 @@
     using BackEnd.Data;
     using BackEnd.Models;
 using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore.Metadata.Internal;
+    using System.ComponentModel.DataAnnotations;
+
+
 
     
-
-   // namespace BackEnd.Controllers
     
-        [ApiController]
+    
+    
+    [ApiController]
         [Route("api/v1/[controller]")]
         public class RasporedController:ControllerBase
-        {
-            // Dependency injection
-            // Definiraš privatno svojstvo
-            private readonly EdunovaContext _context;
+    {
+        
+    
+
+    // Dependency injection
+    // Definiraš privatno svojstvo
+    private readonly EdunovaContext _context;
 
             // Dependency injection
             // U konstruktoru primir instancu i dodjeliš privatnom svojstvu
@@ -24,8 +31,9 @@ using Microsoft.AspNetCore.Mvc;
                 _context = context;
             }
 
+        
 
-            [HttpGet]
+        [HttpGet]
             public IActionResult Get()
             {
                 return new JsonResult(_context.Raspored.ToList());
@@ -40,7 +48,7 @@ using Microsoft.AspNetCore.Mvc;
             }
 
             [HttpPut]
-            [Route("{sifra:int}")]
+            [Route("{ID:int}")]
             public IActionResult Put(int ID, Raspored Raspored)
             {
                 var satnica = _context.Raspored.Find(ID);

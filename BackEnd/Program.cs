@@ -43,9 +43,11 @@ namespace BackEnd
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-            app.UseCors("CorsPolicy");
+            
 
             app.MapControllers();
+
+            app.UseCors("CorsPolicy");
 
             //za potrebe produkcije
             app.UseStaticFiles();

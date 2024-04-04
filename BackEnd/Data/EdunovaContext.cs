@@ -12,8 +12,8 @@ namespace BackEnd.Data
 
         }
 
-        public DbSet<Djelatnici> Djelatnici { get; set; }
-        public DbSet<Raspored> Raspored { get; set; }
+        public DbSet<Djelatnik> djelatnici { get; set; }
+        public DbSet<Raspored> rasporedi { get; set; }
 
     }
 }

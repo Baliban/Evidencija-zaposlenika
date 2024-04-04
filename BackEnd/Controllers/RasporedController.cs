@@ -36,32 +36,32 @@ using Microsoft.AspNetCore.Mvc;
         [HttpGet]
             public IActionResult Get()
             {
-                return new JsonResult(_context.Raspored.ToList());
+                return new JsonResult(_context.rasporedi.ToList());
             }
 
             [HttpPost]
             public IActionResult Post(Raspored tjedan)
             {
-                _context.Raspored.Add(tjedan);
+                _context.rasporedi.Add(tjedan);
                 _context.SaveChanges();
                 return new JsonResult(tjedan);
             }
 
             [HttpPut]
             [Route("{ID:int}")]
-            public IActionResult Put(int ID, Raspored Raspored)
+            public IActionResult Put(int ID, Raspored raspored)
             {
-                var satnica = _context.Raspored.Find(ID);
+                var satnica = _context.rasporedi.Find(ID);
                 // za sada ručno, kasnije će doći Mapper
-                satnica.Ponedjeljak = Raspored.Ponedjeljak;
-                satnica.Utorak = Raspored.Utorak;
-                satnica.Srijeda = Raspored.Srijeda;
-                satnica.Cetvrtak = Raspored.Cetvrtak;
-                satnica.Petak = Raspored.Petak;
-                satnica.Subota = Raspored.Subota;
-                satnica.Nedjelja = Raspored.Nedjelja;
+                satnica.Ponedjeljak = raspored.Ponedjeljak;
+                satnica.Utorak = raspored.Utorak;
+                satnica.Srijeda = raspored.Srijeda;
+                satnica.Cetvrtak = raspored.Cetvrtak;
+                satnica.Petak = raspored.Petak;
+                satnica.Subota = raspored.Subota;
+                satnica.Nedjelja = raspored.Nedjelja;
 
-            _context.Raspored.Update(satnica);
+            _context.rasporedi.Update(satnica);
                 _context.SaveChanges();
 
                 return new JsonResult(satnica);
@@ -72,8 +72,8 @@ using Microsoft.AspNetCore.Mvc;
             [Produces("application/json")]
             public IActionResult Delete(int ID)
             {
-                var satnica = _context.Raspored.Find(ID);
-                _context.Raspored.Remove(satnica);
+                var satnica = _context.rasporedi.Find(ID);
+                _context.rasporedi.Remove(satnica);
                 _context.SaveChanges();
                 return new JsonResult(new { poruka = "Obrisano" });
             }

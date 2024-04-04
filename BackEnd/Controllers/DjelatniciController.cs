@@ -12,7 +12,7 @@ namespace BackEnd.Controllers
 
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class DjelatniciController : ControllerBase
+    public class DjelatniciController:ControllerBase
     {
         // Dependency injection
         // Definiraš privatno svojstvo
@@ -29,20 +29,20 @@ namespace BackEnd.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return new JsonResult(_context.djelatnici.ToList());
+            return new JsonResult(_context.Djelatnici.ToList());
         }
 
         [HttpGet]
         [Route("{ID:int}")]
         public IActionResult GetBySifra(int ID)
         {
-            return new JsonResult(_context.djelatnici.Find(ID));
+            return new JsonResult(_context.Djelatnici.Find(ID));
         }
 
         [HttpPost]
         public IActionResult Post(Djelatnik djelatnik)
         {
-            _context.djelatnici.Add(djelatnik);
+            _context.Djelatnici.Add(djelatnik);
             _context.SaveChanges();
             return new JsonResult(djelatnik);
         }
@@ -51,14 +51,14 @@ namespace BackEnd.Controllers
         [Route("{ID:int}")]
         public IActionResult Put(int ID, Djelatnik djelatnik)
         {
-            var djelatnikIzBaze = _context.djelatnici.Find(ID);
+            var djelatnikIzBaze = _context.Djelatnici.Find(ID);
             // za sada ručno, kasnije će doći Mapper
             djelatnikIzBaze.Ime = djelatnik.Ime;
             djelatnikIzBaze.Prezime = djelatnik.Prezime;
             djelatnikIzBaze.Odjel = djelatnik.Odjel;
 
 
-            _context.djelatnici.Update(djelatnikIzBaze);
+            _context.Djelatnici.Update(djelatnikIzBaze);
             _context.SaveChanges();
 
             return new JsonResult(djelatnikIzBaze);
@@ -69,8 +69,8 @@ namespace BackEnd.Controllers
         [Produces("application/json")]
         public IActionResult Delete(int ID)
         {
-            var djelatnikIzBaze = _context.djelatnici.Find(ID);
-            _context.djelatnici.Remove(djelatnikIzBaze);
+            var djelatnikIzBaze = _context.Djelatnici.Find(ID);
+            _context.Djelatnici.Remove(djelatnikIzBaze);
             _context.SaveChanges();
             return new JsonResult(new { poruka = "Obrisano" });
         }

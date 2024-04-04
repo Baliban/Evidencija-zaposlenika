@@ -5,10 +5,8 @@ namespace BackEnd.Models
     public class Raspored : Entitet
     {
 
-
-        public string? Ime { get; set; }
-        public string? Prezime { get; set; }
-        public string? Odjel { get; set; }
+        public int Djelatnik { get; set; }
+       
         public int? Ponedjeljak { get; set; }
         public int? Utorak { get; set; }
         public int? Srijeda { get; set; }
@@ -17,7 +15,7 @@ namespace BackEnd.Models
         public int? Subota { get; set; }
         public int? Nedjelja { get; set; }
 
-        public int? fondsati { get; set; }
+        public int? Fondsati { get; set; }
 
 
     }

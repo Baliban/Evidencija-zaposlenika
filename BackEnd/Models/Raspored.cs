@@ -5,8 +5,9 @@ namespace BackEnd.Models
     public class Raspored : Entitet
     {
 
-        public int Djelatnik { get; set; }
-       
+        [ForeignKey("djelatnik")]
+        public required Djelatnik Djelatnik { get; set; }
+
         public int? Ponedjeljak { get; set; }
         public int? Utorak { get; set; }
         public int? Srijeda { get; set; }

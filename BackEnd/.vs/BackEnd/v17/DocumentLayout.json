@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\models\\raspored.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:models\\raspored.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\controllers\\osobacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:controllers\\osobacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\models\\dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:models\\dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\controllers\\rasporedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,36 +19,40 @@
       "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:data\\edunovacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\models\\entitet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:models\\entitet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\models\\osoba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:models\\osoba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\models\\raspored.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:models\\raspored.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\models\\djelatnici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:models\\djelatnici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\models\\entitet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:models\\entitet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|c:\\users\\polaznik\\documents\\github\\evidencija-zaposlenika\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4E60EA8-B34D-4B56-BBAA-373BAF691701}|BackEnd.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Controllers\\osobacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\osobacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Models\\osoba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\osoba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Models\\Djelatnici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Djelatnici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,34 +62,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "osobacontroller.cs",
-              "DocumentMoniker": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Controllers\\osobacontroller.cs",
-              "RelativeDocumentMoniker": "Controllers\\osobacontroller.cs",
-              "ToolTip": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Controllers\\osobacontroller.cs*",
-              "RelativeToolTip": "Controllers\\osobacontroller.cs*",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwCgAAAARAAAA",
+              "Title": "DTO.cs",
+              "DocumentMoniker": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Models\\DTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO.cs",
+              "ToolTip": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Models\\DTO.cs",
+              "RelativeToolTip": "Models\\DTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T09:43:21.28Z",
+              "WhenOpened": "2024-04-09T18:10:45.19Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
+              "Title": "osobacontroller.cs",
+              "DocumentMoniker": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Controllers\\osobacontroller.cs",
+              "RelativeDocumentMoniker": "Controllers\\osobacontroller.cs",
+              "ToolTip": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Controllers\\osobacontroller.cs",
+              "RelativeToolTip": "Controllers\\osobacontroller.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwCgAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T09:43:21.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Raspored.cs",
               "DocumentMoniker": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Models\\Raspored.cs",
               "RelativeDocumentMoniker": "Models\\Raspored.cs",
-              "ToolTip": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Models\\Raspored.cs",
-              "RelativeToolTip": "Models\\Raspored.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAArAAAA",
+              "ToolTip": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Models\\Raspored.cs*",
+              "RelativeToolTip": "Models\\Raspored.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T19:24:08.144Z",
               "EditorCaption": ""
@@ -98,7 +110,7 @@
               "RelativeDocumentMoniker": "Controllers\\RasporedController.cs",
               "ToolTip": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Controllers\\RasporedController.cs",
               "RelativeToolTip": "Controllers\\RasporedController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwDEAAAA1AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T19:33:06.562Z",
               "EditorCaption": ""
@@ -111,27 +123,27 @@
               "RelativeDocumentMoniker": "Data\\EdunovaContext.cs",
               "ToolTip": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Data\\EdunovaContext.cs",
               "RelativeToolTip": "Data\\EdunovaContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAaAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwBUAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T19:22:25.785Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAACNAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-03-14T18:33:32.471Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -139,12 +151,11 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T19:16:53.09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-12T19:16:53.09Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "BackEnd.csproj",
               "DocumentMoniker": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\BackEnd.csproj",
               "RelativeDocumentMoniker": "BackEnd.csproj",
@@ -157,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "osoba.cs",
               "DocumentMoniker": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Models\\osoba.cs",
               "RelativeDocumentMoniker": "Models\\osoba.cs",
@@ -165,8 +176,7 @@
               "RelativeToolTip": "Models\\osoba.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T09:38:36.227Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-16T09:38:36.227Z"
             },
             {
               "$type": "Document",
@@ -176,14 +186,14 @@
               "RelativeDocumentMoniker": "appsettings.Development.json",
               "ToolTip": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\appsettings.Development.json",
               "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-03-12T19:28:19.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Entitet.cs",
               "DocumentMoniker": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Models\\Entitet.cs",
               "RelativeDocumentMoniker": "Models\\Entitet.cs",
@@ -196,7 +206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "wwwroot\\index.html",
@@ -209,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Djelatnici.cs",
               "DocumentMoniker": "C:\\Users\\Polaznik\\Documents\\GitHub\\Evidencija-zaposlenika\\BackEnd\\Models\\Djelatnici.cs",
               "RelativeDocumentMoniker": "Models\\Djelatnici.cs",
@@ -217,8 +227,7 @@
               "RelativeToolTip": "Models\\Djelatnici.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-12T19:21:17.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-12T19:21:17.714Z"
             }
           ]
         }

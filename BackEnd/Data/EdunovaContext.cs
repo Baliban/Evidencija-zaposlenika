@@ -1,5 +1,4 @@
-﻿
-
+﻿using BackEnd.Controllers;
 using BackEnd.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
@@ -20,7 +19,7 @@ namespace BackEnd.Data
         {
 
             // implementacija veze 1:n
-            modelBuilder.Entity<Raspored>().HasOne(g => g.Djelatnik);
+             modelBuilder.Entity<Raspored>().HasOne(g => g.Djelatnik);
             
 
         }

@@ -22,11 +22,11 @@ namespace EdunovaAPP.Models
    
     public record RasporedDTOInsertUpdate(
         [Required(ErrorMessage = "Djelatnik obavezno")]
-        string? DjelatnikImePrezime,
-        [Required(ErrorMessage = "Smjer obavezno")]
+        string? DjelatnikID,
         int? Ponedjeljak, 
         int? Utorak,
         int? Srijeda,
+        int? Cetvrtak,
         int? Petak,
         int? Subota,
         int? Nedjelja);

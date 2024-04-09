@@ -36,11 +36,11 @@ namespace BackEnd.Controllers
             }
 
             [HttpPost]
-            public IActionResult Post(Raspored tjedan)
+            public IActionResult Post(Raspored raspored)
             {
-                _context.Rasporedi.Add(tjedan);
+                _context.Rasporedi.Add(raspored);
                 _context.SaveChanges();
-                return new JsonResult(tjedan);
+                return new JsonResult(raspored);
             }
 
             [HttpPut]
@@ -48,7 +48,6 @@ namespace BackEnd.Controllers
             public IActionResult Put(int ID, Raspored raspored)
             {
                 var satnica = _context.Rasporedi.Find(ID);
-            // za sada ručno, kasnije će doći Mapper
                 satnica.Djelatnik = raspored.Djelatnik;
                 satnica.Ponedjeljak = raspored.Ponedjeljak;
                 satnica.Utorak = raspored.Utorak;
@@ -64,7 +63,10 @@ namespace BackEnd.Controllers
                 return new JsonResult(satnica);
             }
 
-            [HttpDelete]
+     
+
+
+        [HttpDelete]
             [Route("{ID:int}")]
             [Produces("application/json")]
             public IActionResult Delete(int ID)

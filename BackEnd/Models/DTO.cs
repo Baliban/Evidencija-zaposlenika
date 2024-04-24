@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 
-namespace EdunovaAPP.Models
+namespace BackEnd.Models
 {
     public record DjelatnikDTORead(int ID, string Ime, string Prezime,
         string Odjel);
@@ -18,11 +18,11 @@ namespace EdunovaAPP.Models
 
       
     public record RasporedDTORead( int ID, string? DjelatnikImePrezime,
-        int? Ponedjeljak, int? Utorak, int? Srijeda, int? Cetvrtak, int? Petak, int? Subota, int? Nedjelja);
+        int? Ponedjeljak, int? Utorak, int? Srijeda, int? Cetvrtak, int? Petak, int? Subota, int? Nedjelja, int? Fondsati);
    
     public record RasporedDTOInsertUpdate(
         [Required(ErrorMessage = "Djelatnik obavezno")]
-        string? DjelatnikID,
+        int? DjelatnikID,
         int? Ponedjeljak, 
         int? Utorak,
         int? Srijeda,

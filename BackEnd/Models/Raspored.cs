@@ -2,6 +2,7 @@
 
 namespace BackEnd.Models
 {
+    [NotMapped]
     public class Raspored : Entitet
     {
 
@@ -16,7 +17,7 @@ namespace BackEnd.Models
         public int? Subota { get; set; }
         public int? Nedjelja { get; set; }
 
-        public int? Fondsati { get; set; }
+        public List<fondsati>? Fondsati { get; set; }
 
 
     }

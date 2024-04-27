@@ -5,18 +5,17 @@ using System.Text.RegularExpressions;
 
 namespace BackEnd.Mappers
 {
-    public class MappingGrupa : Mapping<Raspored, RasporedDTORead, RasporedDTOInsertUpdate>
+    public class MappingRaspored : Mapping<Raspored, RasporedDTORead, RasporedDTOInsertUpdate>
     {
 
-        public MappingGrupa()
+        public MappingRaspored()
         {
             MapperMapReadToDTO = new Mapper(new MapperConfiguration(c => {
                 c.CreateMap<Raspored, RasporedDTORead>()
                 .ConstructUsing(entitet =>
                  new RasporedDTORead(
                     entitet.ID,
-                    entitet.Djelatnik == null ? "" : (entitet.Djelatnik.Ime
-                        + " " + entitet.Djelatnik.Prezime).Trim(),
+                    entitet.Djelatnici.Ime + " " + entitet.Djelatnici.Prezime.Trim(),
                     entitet.Ponedjeljak,
                     entitet.Utorak,
                     entitet.Srijeda,
@@ -24,7 +23,7 @@ namespace BackEnd.Mappers
                     entitet.Petak,
                     entitet.Subota,
                     entitet.Nedjelja,
-                    entitet.Fondsati!.Count()));
+                    entitet.Fondsati));
             }));
 
             MapperMapInsertUpdatedFromDTO = new Mapper(new MapperConfiguration(c => {
@@ -35,7 +34,7 @@ namespace BackEnd.Mappers
                 c.CreateMap<Raspored, RasporedDTOInsertUpdate>()
                 .ConstructUsing(entitet =>
                  new RasporedDTOInsertUpdate(
-                    entitet.Djelatnik == null ? null : entitet.Djelatnik.ID,
+                    entitet.Djelatnici.ID,
                     entitet.Ponedjeljak,
                     entitet.Utorak,
                     entitet.Srijeda,

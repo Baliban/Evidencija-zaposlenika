@@ -74,7 +74,7 @@ namespace BackEnd.Controllers
         }
 
         [HttpPut]
-        [Route("{sifIDra:int}")]
+        [Route("{ID:int}")]
         public IActionResult Put(int ID, TDI dto)
         {
             if (ID <= 0 || !ModelState.IsValid || dto == null)

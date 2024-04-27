@@ -1,6 +1,11 @@
-﻿using BackEnd.Data;
+﻿using BackEnd.Mappers;
+using BackEnd.Data;
 using BackEnd.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Text;
+using AutoMapper;
+
 
 namespace BackEnd.Controllers
 {
@@ -12,67 +17,58 @@ namespace BackEnd.Controllers
 
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class DjelatniciController:ControllerBase
+    public class DjelatniciController : EdunovaController<Djelatnik, DjelatnikDTORead, DjelatnikDTOInsertUpdate>
     {
-        // Dependency injection
-        // Definiraš privatno svojstvo
-        private readonly EdunovaContext _context;
-
-        // Dependency injection
-        // U konstruktoru primir instancu i dodjeliš privatnom svojstvu
-        public DjelatniciController(EdunovaContext context)
+        public DjelatniciController(EdunovaContext context) : base(context)
         {
-            _context = context;
+            DbSet = _context.Djelatnici;
+            
         }
+
 
 
         [HttpGet]
-        public IActionResult Get()
+        [Route("trazi/{uvjet}")]
+        public IActionResult TraziDjelatnik(string uvjet)
         {
-            return new JsonResult(_context.Djelatnici.ToList());
+            if (uvjet == null || uvjet.Length < 3)
+            {
+                return BadRequest(ModelState);
+            }
+            uvjet = uvjet.ToLower();
+            try
+            {
+                IEnumerable<Djelatnik> query = _context.Djelatnici;
+                var niz = uvjet.Split(" ");
+                foreach (var s in uvjet.Split(" "))
+                {
+                    query = query.Where(p => p.Ime.ToLower().Contains(s) || p.Prezime.ToLower().Contains(s));
+                }
+                var djelatnici = query.ToList();
+                return new JsonResult(_mapper.MapReadList(djelatnici));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
-        [HttpGet]
-        [Route("{ID:int}")]
-        public IActionResult GetBySifra(int ID)
+        protected override void KontrolaBrisanje(Djelatnik entitet)
         {
-            return new JsonResult(_context.Djelatnici.Find(ID));
-        }
-
-        [HttpPost]
-        public IActionResult Post(Djelatnik djelatnik)
-        {
-            _context.Djelatnici.Add(djelatnik);
-            _context.SaveChanges();
-            return new JsonResult(djelatnik);
-        }
-
-        [HttpPut]
-        [Route("{ID:int}")]
-        public IActionResult Put(int ID, Djelatnik djelatnik)
-        {
-            var djelatnikIzBaze = _context.Djelatnici.Find(ID);
-            // za sada ručno, kasnije će doći Mapper
-            djelatnikIzBaze.Ime = djelatnik.Ime;
-            djelatnikIzBaze.Prezime = djelatnik.Prezime;
-            djelatnikIzBaze.Odjel = djelatnik.Odjel;
-
-
-            _context.Djelatnici.Update(djelatnikIzBaze);
-            _context.SaveChanges();
-
-            return new JsonResult(djelatnikIzBaze);
-        }
-
-        [HttpDelete]
-        [Route("{ID:int}")]
-        [Produces("application/json")]
-        public IActionResult Delete(int ID)
-        {
-            var djelatnikIzBaze = _context.Djelatnici.Find(ID);
-            _context.Djelatnici.Remove(djelatnikIzBaze);
-            _context.SaveChanges();
-            return new JsonResult(new { poruka = "Obrisano" });
+            var entitetIzbaze = _context.Rasporedi
+                .Include(x => x.Djelatnici)
+            .Where(x => x.Djelatnici.ID == entitet.ID)
+                .ToList();
+            if (entitetIzbaze != null && entitetIzbaze.Count > 0)
+            {
+                StringBuilder sb = new();
+                sb.Append("Djelatnik se ne može obrisati jer je postavljen na Rasporedu: ");
+                foreach (var e in entitetIzbaze)
+                {
+                    sb.Append(e.Djelatnici).Append(", ");
+                }
+                throw new Exception(sb.ToString()[..^26]); // umjesto sb.ToString().Substring(0, sb.ToString().Length - 2)
+            }
         }
 
     }

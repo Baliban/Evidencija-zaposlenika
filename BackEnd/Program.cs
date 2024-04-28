@@ -35,13 +35,13 @@ namespace BackEnd
 
             // Configure the HTTP request pipeline.
             // if (app.Environment.IsDevelopment())
-            // {
+            //{
             app.UseSwagger();
-            app.UseSwaggerUI(o =>
-            {
-                o.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
-            });
-             //}
+            app.UseSwaggerUI();
+            // {
+            //    o.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
+        
+            //}
 
             app.UseHttpsRedirection();
 

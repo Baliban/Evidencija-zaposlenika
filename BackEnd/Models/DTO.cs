@@ -22,7 +22,7 @@ namespace BackEnd.Models
    
     public record RasporedDTOInsertUpdate(
         [Required(ErrorMessage = "Djelatnik obavezno")]
-        int? DjelatnikID,
+        int? ImePrezime = default,
         int? Ponedjeljak = null, 
         int? Utorak = null,
         int? Srijeda = null,

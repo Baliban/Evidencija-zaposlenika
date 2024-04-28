@@ -7,7 +7,9 @@ namespace BackEnd.Models
     {
 
         [ForeignKey("djelatnik")]
+
         public Djelatnik? Djelatnici { get; set; }
+        //public ICollection<Djelatnik>? djelatnik { get; set; }
 
         public int? Ponedjeljak { get; set; }
         public int? Utorak { get; set; }
@@ -18,6 +20,7 @@ namespace BackEnd.Models
         public int? Nedjelja { get; set; }
         public int? Fondsati { get; set; }
 
+        
 
     }
 }

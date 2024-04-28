@@ -13,7 +13,7 @@ namespace BackEnd.Models
 
         
 
-       // public ICollection<Raspored>? Rasporedi { get; } = [];
+        public ICollection<Raspored>? Rasporedi { get; } = [];
 
 
 

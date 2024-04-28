@@ -5,7 +5,7 @@
     using BackEnd.Mappers;
     using Microsoft.EntityFrameworkCore;
     using System.Text;
-using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace BackEnd.Controllers
 
@@ -30,27 +30,36 @@ namespace BackEnd.Controllers
 
 
         [HttpGet]
-        [Route("Djelatnici/{RasporediID:int}")]
-        public IActionResult GetDjelatnici(int IDRasporeda)
+        [Route("RasporedPoDjelatniku/{uvjet}")]
+        public IActionResult GetRasporediByImePrezime(string? uvjet, Djelatnik? r)
         {
-            if (!ModelState.IsValid || IDRasporeda <= 0)
+            if (uvjet == null)
+            
             {
                 return BadRequest(ModelState);
             }
+            uvjet = uvjet.ToLower();
             try
             {
-                var p = _context.Rasporedi
-                    .Include(i => i.Djelatnici).FirstOrDefault(x => x.ID == IDRasporeda);
-                if (p == null)
+                IEnumerable<Raspored> upit = _context.Rasporedi
+                        .Include(r => r.Djelatnici)
+                        .ThenInclude(navigationPropertyPath: r => r.Ime)
+                        .Include(r => r.Djelatnici)
+                        .ThenInclude(navigationPropertyPath: r => r.Prezime)
+                        .ToList();
+
+                var niz = uvjet.Split(" ");
+                foreach (var s in uvjet.Split(" "))
                 {
-                    return BadRequest("Ne postoji raspored s šifrom " + IDRasporeda + " u bazi");
+                    upit = upit.Where(r => r.Djelatnici.Ime.ToLower().Contains(s) || r.Djelatnici.Prezime.ToLower().Contains(s));
                 }
-                var mapping = new Mapping<Djelatnik, DjelatnikDTORead, DjelatnikDTOInsertUpdate>();
-                return new JsonResult(p.Djelatnici);
+                var mapping = new Mapping<Raspored, RasporedDTORead, RasporedDTOInsertUpdate>();
+                var djelatnici = upit.ToList();
+                return new JsonResult(djelatnici);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(e.Message);
             }
         }
 
@@ -160,9 +169,20 @@ namespace BackEnd.Controllers
 
         protected override Raspored KreirajEntitet(RasporedDTOInsertUpdate dto)
         {
-            var djelatnik = _context.Djelatnici.Find(dto.DjelatnikID) ?? throw new Exception("Ne postoji djelatnik s šifrom " + dto.DjelatnikID + " u bazi");
+            var djelatnik = _context.Djelatnici.FirstOrDefault(k => k.ID == dto.ImePrezime);
+            if (djelatnik == null)
+            { 
+                     throw new Exception("Ne postoji djelatnik s šifrom " + dto.ImePrezime + " u bazi");
+            }   
             var entitet = _mapper.MapInsertUpdatedFromDTO(dto);
-            entitet.Djelatnici = djelatnik; 
+            entitet.Djelatnici = djelatnik;
+            entitet.Ponedjeljak = dto.Ponedjeljak;
+            entitet.Utorak = dto.Utorak;
+            entitet.Srijeda = dto.Srijeda;
+            entitet.Cetvrtak = dto.Cetvrtak;
+            entitet.Petak = dto.Petak;
+            entitet.Subota = dto.Subota;
+            entitet.Nedjelja = dto.Nedjelja;
             return entitet;
         }
 
@@ -180,19 +200,21 @@ namespace BackEnd.Controllers
 
         protected override Raspored NadiEntitet(int ID)
         {
-            return _context.Rasporedi.Include(i => i.Djelatnici)
-                    .Include(i => i.Djelatnici).FirstOrDefault(x => x.ID == ID) ?? throw new Exception("Ne postoji Raspored s šifrom " + ID + " u bazi");
+            return _context.Rasporedi
+                .Include(i => i.Djelatnici)
+                .Include(i => i.Djelatnici).FirstOrDefault(x => x.ID == ID)
+                ?? throw new Exception("Ne postoji Raspored s šifrom " + ID + " u bazi");
         }
-
 
 
         protected override Raspored PromjeniEntitet(RasporedDTOInsertUpdate dto, Raspored entitet)
         {
-            var djelatnik = _context.Djelatnici.Find(dto.DjelatnikID) ?? throw new Exception("Ne postoji Djelatnik s šifrom " + dto.DjelatnikID + " u bazi");
+            var djelatnik = _context.Djelatnici.Find(dto.ImePrezime)
+            ?? throw new Exception("Ne postoji Djelatnik s šifrom " + dto.ImePrezime + " u bazi");
 
 
 
-           
+            entitet.Djelatnici = djelatnik;
             entitet.Ponedjeljak = dto.Ponedjeljak;
             entitet.Utorak = dto.Utorak;
             entitet.Srijeda = dto.Srijeda;

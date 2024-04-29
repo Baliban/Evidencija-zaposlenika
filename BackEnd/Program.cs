@@ -1,7 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using BackEnd.Data;
+//using BackEnd.Extensions;
 using Microsoft.AspNetCore.Hosting.Builder;
 using System.Reflection.Metadata;
+using System.Text;
+
 namespace BackEnd
 {
     public class Program
@@ -25,7 +28,7 @@ namespace BackEnd
                 );
 
             });
-
+            builder.Services.AddAutoMapper(typeof(Program));
             // Dodavanje baze podataka
             builder.Services.AddDbContext<EdunovaContext>(o => {
                 o.UseSqlServer(builder.Configuration.GetConnectionString("EdunovaContext"));
@@ -39,11 +42,13 @@ namespace BackEnd
             app.UseSwagger();
             app.UseSwaggerUI();
             // {
-            //    o.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
+               // o.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
         
             //}
 
             app.UseHttpsRedirection();
+
+            app.UseRouting();
 
             app.UseAuthorization();
             

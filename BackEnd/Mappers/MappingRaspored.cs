@@ -15,7 +15,8 @@ namespace BackEnd.Mappers
                 .ConstructUsing(entitet =>
                  new RasporedDTORead(
                     entitet.ID,
-                    entitet.Djelatnici.Ime + " " + entitet.Djelatnici.Prezime.Trim(),
+                    entitet.Djelatnici == null ? "" : (entitet.Djelatnici.Ime
+                        + " " + entitet.Djelatnici.Prezime).Trim(),
                     entitet.Ponedjeljak,
                     entitet.Utorak,
                     entitet.Srijeda,
@@ -34,7 +35,7 @@ namespace BackEnd.Mappers
                 c.CreateMap<Raspored, RasporedDTOInsertUpdate>()
                 .ConstructUsing(entitet =>
                  new RasporedDTOInsertUpdate(
-                    entitet.Djelatnici.ID,
+                    entitet.Djelatnici == null ? null : entitet.Djelatnici.ID,
                     entitet.Ponedjeljak,
                     entitet.Utorak,
                     entitet.Srijeda,

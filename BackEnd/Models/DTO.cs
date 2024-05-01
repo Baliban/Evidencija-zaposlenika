@@ -30,4 +30,11 @@ namespace BackEnd.Models
         int? Petak = null,
         int? Subota = null,
         int? Nedjelja = null);
+
+    public record SatnicaDTORead(int ID,string? Ime, string? Prezime ,string? Odjel, 
+        int? Ponedjeljak = null, int? Utorak = null, int? Srijeda = null, int? Cetvrtak = null, int? Petak = null, int? Subota = null, int? Nedjelja = null, int? Fondsati = null);
+
+    
+
+
 }

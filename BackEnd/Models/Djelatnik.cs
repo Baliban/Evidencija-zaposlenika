@@ -11,9 +11,9 @@ namespace BackEnd.Models
         public string? Prezime { get; set; }
         public string? Odjel { get; set; }
 
-        
+        //public ICollection<Satnica>? Satnice { get; } = [];
 
-        public ICollection<Raspored>? Rasporedi { get; } = [];
+        //public ICollection<Raspored>? Rasporedi { get; } = [];
 
 
 

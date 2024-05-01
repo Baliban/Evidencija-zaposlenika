@@ -63,6 +63,31 @@ namespace BackEnd.Controllers
             }
         }
 
+        //[HttpGet]
+        //[Route("Djelatnici/{IDRasporeda:int}")]
+        //public IActionResult GetDjelatnici(int IDRasporeda)
+        //{
+        //    if (!ModelState.IsValid || IDRasporeda <= 0)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    try
+        //    {
+        //        var p = _context.Rasporedi
+        //            .Include(i => i.Djelatnici).FirstOrDefault(x => x.ID == IDRasporeda);
+        //        if (p == null)
+        //        {
+        //            return BadRequest("Ne postoji grupa s šifrom " + IDRasporeda + " u bazi");
+        //        }
+        //        var mapping = new MappingDjelatnika();
+        //        return new JsonResult(mapping.MapReadList(p.Djelatnici));
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
+
         [HttpPost]
         [Route("{ID:int}/dodaj/{DjelatnikID:int}")]
         public IActionResult DodajDjelatnika(int ID, int DjelatnikID)

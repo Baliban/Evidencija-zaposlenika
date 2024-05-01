@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BackEnd.Models
 {
@@ -7,9 +9,8 @@ namespace BackEnd.Models
     {
 
         [ForeignKey("djelatnik")]
-
         public Djelatnik? Djelatnici { get; set; }
-        //public ICollection<Djelatnik>? djelatnik { get; set; }
+       // public ICollection<Djelatnik>? Djelatnici { get; set; }
 
         public int? Ponedjeljak { get; set; }
         public int? Utorak { get; set; }
@@ -20,7 +21,10 @@ namespace BackEnd.Models
         public int? Nedjelja { get; set; }
         public int? Fondsati { get; set; }
 
-        
+        //[ForeignKey("SmjeneID")]
+        //public Smjena? Smjene { get; set; }
+
+
 
     }
 }

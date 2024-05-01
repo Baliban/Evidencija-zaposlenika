@@ -17,9 +17,10 @@ namespace BackEnd.Mappers
                     entitet.ID,
                     entitet.Ime,
                     entitet.Prezime,
-                    entitet.Odjel
-                    
-                    
+                    entitet.Odjel,
+                    entitet.Smjene == null ? null : entitet.Smjene.ID
+
+
                     ));
             })
             );

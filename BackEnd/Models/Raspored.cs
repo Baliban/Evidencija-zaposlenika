@@ -21,8 +21,8 @@ namespace BackEnd.Models
         public int? Nedjelja { get; set; }
         public int? Fondsati { get; set; }
 
-        //[ForeignKey("SmjeneID")]
-        //public Smjena? Smjene { get; set; }
+        [ForeignKey("SmjeneID")]
+        public Smjena? Smjene { get; set; }
 
 
 

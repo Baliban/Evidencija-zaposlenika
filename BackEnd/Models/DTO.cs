@@ -1,10 +1,11 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BackEnd.Models
 {
     public record DjelatnikDTORead(int ID, string? Ime, string? Prezime,
-        string? Odjel);
+        string? Odjel, int? SmjeneID);
 
     public record DjelatnikDTOInsertUpdate(
         [Required(ErrorMessage = "Ime obavezno")]
@@ -17,8 +18,8 @@ namespace BackEnd.Models
         string? Odjel);
 
       
-    public record RasporedDTORead( int? ID = null, string? DjelatnikImePrezime = default,
-        int? Ponedjeljak = null, int? Utorak = null, int? Srijeda = null, int? Cetvrtak = null, int? Petak = null, int? Subota = null, int? Nedjelja = null, int? Fondsati = null);
+    public record RasporedDTORead( int? ID, string? DjelatnikImePrezime,
+        int? Ponedjeljak, int? Utorak, int? Srijeda, int? Cetvrtak, int? Petak, int? Subota, int? Nedjelja, int? Fondsati, int? SmjeneID);
    
     public record RasporedDTOInsertUpdate(
         [Required(ErrorMessage = "Djelatnik obavezno")]
@@ -34,7 +35,8 @@ namespace BackEnd.Models
     public record SatnicaDTORead(int ID,string? Ime, string? Prezime ,string? Odjel, 
         int? Ponedjeljak = null, int? Utorak = null, int? Srijeda = null, int? Cetvrtak = null, int? Petak = null, int? Subota = null, int? Nedjelja = null, int? Fondsati = null);
 
-    
+    public record SmjenaDTORead(int ID,int? Rasporedi,int? Tip);
+
 
 
 }

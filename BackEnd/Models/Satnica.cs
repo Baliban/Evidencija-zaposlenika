@@ -7,15 +7,11 @@ namespace BackEnd.Models
 {
     public class Satnica : Entitet
     {
-
-        [ForeignKey("raspored")]
-        public Raspored? Rasporedi { get; set; }
-
-        [ForeignKey("djelatnik")]
-        public Djelatnik? Djelatnici { get;  }
-        public string? Ime { get; }
-        public string? Prezime { get; }
-        public string? Odjel { get; }
+        
+        public string? Ime { get; set; } 
+        public string? Prezime { get; set; }
+        public string? Odjel { get; set; }
+        //public string? Djelatnici { get; } 
         public int? Ponedjeljak { get; }
         public int? Utorak { get; }
         public int? Srijeda { get; }

@@ -24,7 +24,8 @@ namespace BackEnd.Mappers
                     entitet.Petak,
                     entitet.Subota,
                     entitet.Nedjelja,
-                    entitet.Fondsati));
+                    entitet.Fondsati,
+                    entitet.Smjene == null ? null : entitet.Smjene.ID));
             }));
 
             MapperMapInsertUpdatedFromDTO = new Mapper(new MapperConfiguration(c => {

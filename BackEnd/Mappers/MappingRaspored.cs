@@ -16,16 +16,14 @@ namespace BackEnd.Mappers
                  new RasporedDTORead(
                     entitet.ID,
                     entitet.Djelatnici == null ? "" : (entitet.Djelatnici.Ime
-                        + " " + entitet.Djelatnici.Prezime).Trim(),
+                        + " " + entitet.Djelatnici.Prezime + " " + entitet.Djelatnici.Odjel).Trim(),
                     entitet.Ponedjeljak,
                     entitet.Utorak,
                     entitet.Srijeda,
                     entitet.Cetvrtak,
                     entitet.Petak,
                     entitet.Subota,
-                    entitet.Nedjelja,
-                    entitet.Fondsati,
-                    entitet.Smjene == null ? null : entitet.Smjene.ID));
+                    entitet.Nedjelja));
             }));
 
             MapperMapInsertUpdatedFromDTO = new Mapper(new MapperConfiguration(c => {

@@ -1,8 +1,6 @@
-using Microsoft.EntityFrameworkCore;
 using BackEnd.Data;
-//using BackEnd.Extensions;
-using Microsoft.AspNetCore.Hosting.Builder;
-using System.Reflection.Metadata;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 namespace BackEnd
@@ -37,14 +35,15 @@ namespace BackEnd
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            // if (app.Environment.IsDevelopment())
-            //{
+            if (app.Environment.IsDevelopment())
+            {
             app.UseSwagger();
             app.UseSwaggerUI();
-            // {
-               // o.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
-        
-            //}
+            //{
+             //   o.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);
+                //o.EnableTryItOutByDefault();
+            //});
+            }
 
             app.UseHttpsRedirection();
 

@@ -12,7 +12,6 @@ namespace BackEnd.Migrations
 {
     [DbContext(typeof(EdunovaContext))]
     partial class EdunovaContextModelSnapshot : ModelSnapshot
-
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -25,24 +24,40 @@ namespace BackEnd.Migrations
 
             modelBuilder.Entity("BackEnd.Models.Djelatnik", b =>
                 {
+                    b.Property<int?>("Odjel")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Odjel"));
+
+                    b.Property<int>("ID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Ime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Prezime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Odjel");
+
+                    b.ToTable("Djelatnici");
+                });
+
+            modelBuilder.Entity("BackEnd.Models.Odjel", b =>
+                {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<string>("Ime")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Odjel")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Prezime")
+                    b.Property<string>("Naziv")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Djelatnici");
+                    b.ToTable("Odjeli");
                 });
 
             modelBuilder.Entity("BackEnd.Models.Raspored", b =>
@@ -55,11 +70,6 @@ namespace BackEnd.Migrations
 
                     b.Property<int?>("Cetvrtak")
                         .HasColumnType("int");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
 
                     b.Property<int?>("Nedjelja")
                         .HasColumnType("int");
@@ -87,32 +97,6 @@ namespace BackEnd.Migrations
                     b.HasIndex("djelatnik");
 
                     b.ToTable("Rasporedi");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Raspored");
-
-                    b.UseTphMappingStrategy();
-                });
-
-            modelBuilder.Entity("Rasporedfondsati", b =>
-                {
-                    b.Property<int>("FondsatiID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RasporediID")
-                        .HasColumnType("int");
-
-                    b.HasKey("FondsatiID", "RasporediID");
-
-                    b.HasIndex("RasporediID");
-
-                    b.ToTable("Rasporedfondsati");
-                });
-
-            modelBuilder.Entity("BackEnd.Models.fondsati", b =>
-                {
-                    b.HasBaseType("BackEnd.Models.Raspored");
-
-                    b.HasDiscriminator().HasValue("fondsati");
                 });
 
             modelBuilder.Entity("BackEnd.Models.Raspored", b =>
@@ -122,21 +106,6 @@ namespace BackEnd.Migrations
                         .HasForeignKey("djelatnik");
 
                     b.Navigation("Djelatnici");
-                });
-
-            modelBuilder.Entity("Rasporedfondsati", b =>
-                {
-                    b.HasOne("BackEnd.Models.fondsati", null)
-                        .WithMany()
-                        .HasForeignKey("FondsatiID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BackEnd.Models.Raspored", null)
-                        .WithMany()
-                        .HasForeignKey("RasporediID")
-                        .OnDelete(DeleteBehavior.ClientCascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

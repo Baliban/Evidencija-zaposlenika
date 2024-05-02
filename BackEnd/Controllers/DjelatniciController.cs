@@ -22,7 +22,7 @@ namespace BackEnd.Controllers
         public DjelatniciController(EdunovaContext context) : base(context)
         {
             DbSet = _context.Djelatnici;
-            
+            _mapper = new MappingDjelatnika();
         }
 
 

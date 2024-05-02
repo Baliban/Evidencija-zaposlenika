@@ -17,9 +17,7 @@ namespace BackEnd.Mappers
                     entitet.ID,
                     entitet.Ime,
                     entitet.Prezime,
-                    entitet.Odjel,
-                    entitet.Smjene == null ? null : entitet.Smjene.ID
-
+                    entitet.Odjel == null ? null : entitet.Odjel.ID
 
                     ));
             })
@@ -33,7 +31,7 @@ namespace BackEnd.Mappers
                 new DjelatnikDTOInsertUpdate(
                    entitet.Ime,
                    entitet.Prezime,
-                   entitet.Odjel
+                   entitet.Odjel == null ? null : entitet.Odjel.ID
                    ));
               })
               );

@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using BackEnd.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 namespace BackEnd.Mappers
 {
@@ -17,7 +19,7 @@ namespace BackEnd.Mappers
                     entitet.ID,
                     entitet.Ime,
                     entitet.Prezime,
-                    entitet.Odjel == null ? null : entitet.Odjel.ID
+                    entitet.Odjel == null ? "" : entitet.Odjel.Naziv
 
                     ));
             })

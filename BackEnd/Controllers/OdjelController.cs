@@ -24,7 +24,8 @@ namespace BackEnd.Controllers
             DbSet = _context.Odjeli;
            
         }
-                
+
+       
         protected override void KontrolaBrisanje(Odjel entitet)
         {
             //var entitetIzbaze = _context.Djelatnici

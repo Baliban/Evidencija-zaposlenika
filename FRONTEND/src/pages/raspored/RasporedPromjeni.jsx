@@ -53,14 +53,14 @@ export default function RasporedPromjeni() {
     const podaci = new FormData(e.target);
    
         const raspored = {
-            DjelatniID: podaci.get('djelatnik'),
-            Ponedjeljak: podaci.get('ponedjeljak'),
-            Utorak: podaci.get('utorak'),
-            Srijeda: podaci.get('srijeda'),
-            Cetvrtak: podaci.get('cetvrtak'),
-            Petak: podaci.get('petak'),
-            Subota: podaci.get('subota'),
-            Nedjelja: podaci.get('nedjelja'),
+            djelatnikID: podaci.get('djelatnikid'),
+            ponedjeljak: podaci.get('ponedjeljak'),
+            utorak: podaci.get('utorak'),
+            srijeda: podaci.get('srijeda'),
+            cetvrtak: podaci.get('cetvrtak'),
+            petak: podaci.get('petak'),
+            subota: podaci.get('subota'),
+            nedjelja: podaci.get('nedjelja'),
 
         };
         promjeni(raspored);
@@ -71,44 +71,44 @@ export default function RasporedPromjeni() {
     <Container>
             <Form onSubmit={obradiSubmit}>
 
-                <Form.Group controlId="djelatnik">
+                <Form.Group controlId="djelatnikid">
                     <Form.Label>djelatnik</Form.Label>
-                    <Form.Control type="text" name="djelatnik" defaultValue={raspored.DjelatniID} required />
+                    <Form.Control type="number" name="djelatnikid" defaultValue={raspored.djelatnikID} required />
                 </Form.Group>
 
                 <Form.Group controlId="ponedjeljak">
                     <Form.Label>ponedjeljak</Form.Label>
-                    <Form.Control type="number" name="ponedjeljak" defaultValue={raspored.Ponedjeljak} required />
+                    <Form.Control type="number" name="ponedjeljak" defaultValue={raspored.ponedjeljak} required />
                 </Form.Group>
 
                 <Form.Group controlId="utorak">
                     <Form.Label>utorak</Form.Label>
-                    <Form.Control type="number" name="utorak" defaultValue={raspored.Utorak} required />
+                    <Form.Control type="number" name="utorak" defaultValue={raspored.utorak} required />
                 </Form.Group>
 
                 <Form.Group controlId="srijeda">
                     <Form.Label>srijeda</Form.Label>
-                    <Form.Control type="number" name="srijeda" defaultValue={raspored.Srijeda} required />
+                    <Form.Control type="number" name="srijeda" defaultValue={raspored.srijeda} required />
                 </Form.Group>
 
                 <Form.Group controlId="cetvrtak">
                     <Form.Label>cetvrtak</Form.Label>
-                    <Form.Control type="number" name="cetvrtak" defaultValue={raspored.Cetvrtak} required />
+                    <Form.Control type="number" name="cetvrtak" defaultValue={raspored.cetvrtak} required />
                 </Form.Group>
 
                 <Form.Group controlId="petak">
                     <Form.Label>petak</Form.Label>
-                    <Form.Control type="nember" name="petak" defaultValue={raspored.Petak} required />
+                    <Form.Control type="nember" name="petak" defaultValue={raspored.petak} required />
                 </Form.Group>
 
                 <Form.Group controlId="subota">
                     <Form.Label>subota</Form.Label>
-                    <Form.Control type="number" name="subota" defaultValue={raspored.Subota} required />
+                    <Form.Control type="number" name="subota" defaultValue={raspored.subota} required />
                 </Form.Group>
 
                 <Form.Group controlId="nedjelja">
                     <Form.Label>nedjelja</Form.Label>
-                    <Form.Control type="number" name="nedjelja" defaultValue={raspored.Nedjelja} required />
+                    <Form.Control type="number" name="nedjelja" defaultValue={raspored.nedjelja} required />
                 </Form.Group>
 
                 <hr />

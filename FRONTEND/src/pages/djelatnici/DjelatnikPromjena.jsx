@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Container, Form, FormSelect,Row,Col, Button} from "react-bootstrap";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import moment from "moment";
-//import Service from "../../services/DjelatniciService";
 import { RoutesNames } from "../../constants";
-import InputText from "../../components/InputText";
-import Akcije from "../../components/Akcije";
 import useLoading from '../../hooks/useLoading';
 import useError from "../../hooks/useError";
-//import { promjeni } from "../../services/HttpService";
-import DjelatniciService from "../../services/DjelatniciService";
-import { FaReply, FaSync } from "react-icons/fa";
+import Service from "../../services/DjelatniciService";
+import { FcServices } from "react-icons/fc";
 
 
 export default function DjelatnikPromjena(){
@@ -22,7 +17,7 @@ export default function DjelatnikPromjena(){
 
     async function dohvatiDjelatnika() {
         showLoading();
-        const o = await DjelatniciService.GetBySifra(routeParams.ID);
+        const o = await Service.GetBySifra(routeParams.id);
         hideLoading();
         if (o.greska) {
             console.log(o.poruka);
@@ -35,7 +30,7 @@ export default function DjelatnikPromjena(){
 
     async function promjeni(djelatnici) {
         showLoading();
-        const odgovor = await DjelatniciService.put(routeParams.ID,djelatnici);
+        const odgovor = await Service.promjeni(routeParams.id,djelatnici);
         hideLoading();
         if (odgovor.greska) {
             console.log(odgovor.poruka);
@@ -54,9 +49,9 @@ export default function DjelatnikPromjena(){
 
         const podaci = new FormData(e.target);
         const djelatnik = {
-            Ime: podaci.get('Ime'),
-            Prezime: podaci.get('prezime'),
-            OdjelID: parseInt(podaci.get('odjel'))
+            ime: podaci.get('Ime'),
+            prezime: podaci.get('prezime'),
+            odjeID: parseInt(podaci.get('odjel')),
             
         };
         promjeni(djelatnik);
@@ -68,17 +63,17 @@ export default function DjelatnikPromjena(){
 
                 <Form.Group controlId="Ime">
                     <Form.Label>ime</Form.Label>
-                    <Form.Control type="text" name="Ime" defaultValue={djelatnik.Ime} required />
+                    <Form.Control type="text" name="Ime" defaultValue={djelatnik.ime} required />
                 </Form.Group>
 
                 <Form.Group controlId="prezime">
                     <Form.Label>prezime</Form.Label>
-                    <Form.Control type="text" name="prezime" defaultValue={djelatnik.Prezime} required />
+                    <Form.Control type="text" name="prezime" defaultValue={djelatnik.prezime} required />
                 </Form.Group>
 
                 <Form.Group controlId="odjel">
                     <Form.Label>odjel</Form.Label>
-                    <Form.Control type="number" name="odjel" defaultValue={djelatnik.OdjelID} required />
+                    <Form.Control type="number" name="odjel" defaultValue={djelatnik.odjeID} required />
                 </Form.Group>
 
                 <hr />

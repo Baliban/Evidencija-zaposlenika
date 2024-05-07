@@ -19,8 +19,8 @@ export default function Odjel() {
     setOdjel(odgovor.podaci);
   }
 
-  async function obrisi(ID) {
-    const odgovor = await Service.obrisi("Odjel", ID);
+  async function obrisi(id) {
+    const odgovor = await Service.obrisi("Odjel", id);
     alert(Service.dohvatiPorukeAlert(odgovor.podaci));
     if (odgovor.ok) {
       dohvatiOdjel();
@@ -56,13 +56,13 @@ export default function Odjel() {
                   <Button
                     variant="primary"
                     onClick={() => {
-                      navigate(`/Odjel/${odjel.ID}`);
+                      navigate(`/odjel/${odjel.id}`);
                     }}
                   >
                     <FaEdit size={25} />
                   </Button>
                   &nbsp;&nbsp;&nbsp;
-                  <Button variant="danger" onClick={() => obrisi(odjel.ID)}>
+                  <Button variant="danger" onClick={() => obrisi(odjel.id)}>
                     <FaTrash size={25} />
                   </Button>
                 </td>

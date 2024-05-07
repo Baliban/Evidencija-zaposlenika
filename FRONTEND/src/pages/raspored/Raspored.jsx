@@ -22,8 +22,8 @@ export default function Raspored(){
       setRaspored(odgovor.podaci);
     }
   
-    async function obrisi(ID) {
-      const odgovor = await Service.obrisi("Raspored", ID);
+    async function obrisi(id) {
+      const odgovor = await Service.obrisi("Raspored", id);
       alert(Service.dohvatiPorukeAlert(odgovor.podaci));
       if (odgovor.ok) {
         dohvatiRaspored();
@@ -71,13 +71,13 @@ export default function Raspored(){
                   <Button
                     variant="primary"
                     onClick={() => {
-                      navigate(`/Raspored/${raspored.ID}`);
+                      navigate(`/raspored/${raspored.id}`);
                     }}
                   >
                     <FaEdit size={25} />
                   </Button>
                   &nbsp;&nbsp;&nbsp;
-                  <Button variant="danger" onClick={() => obrisi(raspored.ID)}>
+                  <Button variant="danger" onClick={() => obrisi(raspored.id)}>
                     <FaTrash size={25} />
                   </Button>
                 </td> 

@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Container, Form, FormSelect,Row,Col, Button} from "react-bootstrap";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { RoutesNames } from "../../constants";
-import InputText from "../../components/InputText";
-import Akcije from "../../components/Akcije";
 import useLoading from '../../hooks/useLoading';
 import useError from "../../hooks/useError";
-import { FaReply, FaSync } from "react-icons/fa";
 import OdjelService from "../../services/OdjelService";
 
 
@@ -52,7 +49,7 @@ export default function OdjeliPromjeni(){
 
         const podaci = new FormData(e.target);
         const odjel = {
-            Naziv: podaci.get('naziv'),
+            naziv: podaci.get('naziv'),
             
         };
         promjeni(odjel);
@@ -64,7 +61,7 @@ export default function OdjeliPromjeni(){
 
                 <Form.Group controlId="naziv">
                     <Form.Label>naziv</Form.Label>
-                    <Form.Control type="text" name="naziv" defaultValue={odjel.Naziv} required />
+                    <Form.Control type="text" name="naziv" defaultValue={odjel.naziv} required />
                 </Form.Group>
 
                 <hr />

@@ -11,11 +11,6 @@ using System.Text.RegularExpressions;
 namespace BackEnd.Controllers
 {
     
-
-
-
-    // namespace BackEnd.Controllers
-
     [ApiController]
     [Route("api/v1/[controller]")]
     public class DjelatniciController : EdunovaController<Djelatnik, DjelatnikDTORead, DjelatnikDTOInsertUpdate>

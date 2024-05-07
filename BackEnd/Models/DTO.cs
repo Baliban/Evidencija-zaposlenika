@@ -34,10 +34,10 @@ namespace BackEnd.Models
         int? Subota,
         int? Nedjelja);
 
-    public record OdjelDTORead(int ID,string Naziv);
+    public record OdjelDTORead(int ID,string? Naziv);
 
-    public record OdjelInsertUpdate(
-        string Naziv);
+    public record OdjelDTOInsertUpdate(
+        string? Naziv);
 
 
 }

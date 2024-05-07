@@ -13,17 +13,17 @@ export const HttpService = axios.create({
 export async function get(naziv){
     return await HttpService.get('/' + naziv).then((res)=>{return obradiUspjeh(res);}).catch((e)=>{ return obradiGresku(e);});
 }
-export async function getBySifra(naziv,ID) {
-    return await HttpService.get('/'+naziv+'/' + ID).then((res)=>{return obradiUspjeh(res);}).catch((e)=>{ return obradiGresku(e);});
+export async function getBySifra(naziv,id) {
+    return await HttpService.get('/'+naziv+'/' + id).then((res)=>{return obradiUspjeh(res);}).catch((e)=>{ return obradiGresku(e);});
     }
 export async function dodaj(naziv,entitet) {
 return await HttpService.post('/' + naziv, entitet).then((res)=>{return obradiUspjeh(res);}).catch((e)=>{ return obradiGresku(e);});
 }
-export async function promjeni(naziv,ID, entitet) {
-return await HttpService.put('/'+naziv+'/' + ID, entitet).then((res)=>{return obradiUspjehBrisanje(res);}).catch((e)=>{ return obradiGresku(e);});
+export async function promjeni(naziv,id, entitet) {
+return await HttpService.put('/'+naziv+'/' + id, entitet).then((res)=>{return obradiUspjehBrisanje(res);}).catch((e)=>{ return obradiGresku(e);});
 }
-export async function obrisi(naziv,ID) {
-    return await HttpService.delete('/' + naziv + '/' + ID).then((res)=>{return obradiUspjehBrisanje(res);}).catch((e)=>{ return obradiGresku(e);});
+export async function obrisi(naziv,id) {
+    return await HttpService.delete('/' + naziv + '/' + id).then((res)=>{return obradiUspjehBrisanje(res);}).catch((e)=>{ return obradiGresku(e);});
 }
     
 

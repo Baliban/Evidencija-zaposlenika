@@ -37,7 +37,7 @@ namespace BackEnd
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-            app.UseSwagger();
+                app.UseSwagger();
             app.UseSwaggerUI();
             //{
              //   o.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None);

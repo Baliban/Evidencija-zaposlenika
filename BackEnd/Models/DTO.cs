@@ -17,10 +17,12 @@ namespace BackEnd.Models
         [Required(ErrorMessage = "Odjel obavezno")]
         int? OdjelID);
 
-      
-    public record RasporedDTORead(int? ID = null,string? DjelatnikImePrezimeOdjel = default,
-        int? Ponedjeljak = null, int? Utorak = null, int? Srijeda = null, int? Cetvrtak = null, int? Petak = null, int? Subota = null, int? Nedjelja = null);
-   
+
+    public record RasporedDTORead(int ID, string? DjelatnikImePrezimeOdjel,
+        int? Ponedjeljak, int? Utorak, int? Srijeda, int? Cetvrtak, int? Petak, int? Subota, int? Nedjelja);
+    
+         
+
     public record RasporedDTOInsertUpdate(
         [Required(ErrorMessage = "Djelatnik obavezno")]
         int? DjelatnikID,

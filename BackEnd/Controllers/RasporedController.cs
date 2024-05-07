@@ -220,12 +220,10 @@ namespace BackEnd.Controllers
             return _mapper.MapReadList(lista);
         }
 
-        //protected override Raspored NadiEntitet(int ID)
-        //{
-        //    return _context.Rasporedi.Include(i => i.Djelatnici)
-                
-        //        ?? throw new Exception("Ne postoji Raspored s šifrom " + ID + " u bazi");
-        //}
+        protected override Raspored NadiEntitet(int ID)
+        {
+            return _context.Rasporedi.Include(i => i.Djelatnici).FirstOrDefault(x => x.ID == ID) ?? throw new Exception("Ne postoji Raspored s šifrom " + ID + " u bazi");
+        }
 
 
         protected override Raspored PromjeniEntitet(RasporedDTOInsertUpdate dto, Raspored entitet)
